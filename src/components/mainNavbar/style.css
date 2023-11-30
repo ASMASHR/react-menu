@@ -1,0 +1,109 @@
+nav{
+    background-color: #2F5068 ;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left:auto;
+
+}
+.nav-links a,.nav-links-responsive a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.landing{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+.nav-links-responsive{
+    display: none;
+}
+@media (max-width:768px)
+{ 
+    .nav-links{
+    display:none;
+}
+    .hamburger{
+            
+            position: absolute;
+            cursor: pointer;
+            top: 45%;
+            right: 5%;
+            transform: translateX(-5%,-5%);
+            z-index: 2; 
+            width: 32px;
+            height: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    .line{
+            width: 32px;
+            height: 3px;
+            background:white;
+            margin: 5px;
+            transform-origin: left;
+            transition: all 2s ease;
+        }
+    nav{
+            position: relative;
+        }
+    .nav-links-responsive{
+            position: fixed;
+            top: 0;
+            display: flex;
+            list-style: none;
+            height: 100vh;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            margin-left:auto;
+            flex-direction: column;
+            clip-path: circle(100px at 50% -20%);
+            -webkit-clip-path:circle(100px at 50% -20%);
+            transition: all 1s ease-out;
+            background:rgb(190, 78, 78);
+        }    
+    .active{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path:circle(1000px at 90% -10%);
+        
+    }
+    .line.close:first-child {
+        transform: rotate(40deg);
+      }
+    .line.close:nth-child(2) {
+        opacity: 0;
+      }
+    .line.close:last-child {
+        transform: rotate(-40deg);
+      }
+      .nav-links-responsive li{
+        opacity:0;
+      }
+      .nav-links-responsive li.fade:first-child{
+        transition: all 0.5s ease 0.2s;
+      }
+
+      .nav-links-responsive li.fade:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+      }
+
+      .nav-links-responsive li.fade:last-child{
+        transition: all 0.5s ease 0.6s;
+      }
+      .nav-links-responsive li.fade{
+        opacity:1
+      }
+}
